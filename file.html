@@ -164,6 +164,87 @@
             font-style: italic;
             font-family: 'Times New Roman', Times, serif;
         }
+         @media (max-width: 768px) {
+            .logo {
+                width: 20vw; /* Increase size of the logo on smaller screens */
+                bottom: 5%;
+                right: 5%;
+            }
+
+            .small-logo {
+                width: 30vw; /* Increase size of the small logo on smaller screens */
+                left: 35%;
+                top: 5%;
+            }
+
+            .fb-logo,
+            .contact-logo,
+            .loc-logo,
+            .email-logo {
+                width: 8vw; /* Adjust the size of icons */
+                bottom: initial; /* Reset bottom position */
+                left: 5%;
+                margin-bottom: 5%;
+            }
+
+            .fb-logo {
+                top: 25%;
+            }
+
+            .loc-logo {
+                top: 40%;
+            }
+
+            .email-logo {
+                top: 55%;
+            }
+
+            .contact-logo {
+                top: 70%;
+            }
+
+            .fb-text,
+            .loc-text,
+            .contact-text,
+            .email-text,
+            .position-text,
+            .h1-text,
+            .h5-text,
+            .h6-text {
+                font-size: 3vw; /* Adjust font sizes for readability on smaller screens */
+                text-align: left; /* Align text to left */
+                left: 20%; /* Adjust left position */
+                top: initial; /* Reset top position */
+            }
+
+            .fb-text {
+                top: 23%;
+            }
+
+            .loc-text {
+                top: 38%;
+            }
+
+            .email-text {
+                top: 53%;
+            }
+
+            .contact-text {
+                top: 68%;
+            }
+
+            .h1-text {
+                top: 10%;
+                left: 10%;
+                font-size: 5vw; /* Larger font size for headings */
+            }
+
+            .h5-text {
+                top: 80%;
+                left: 10%;
+                right: 10%;
+            }
+         }
     </style>
 </head>
 <body>
