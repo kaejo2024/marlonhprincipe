@@ -6,137 +6,85 @@
     <title>One Source Employee Information</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
     <style>
-        /* Apply background image to the entire page */
         body {
-            background-image: url('pics/bg.jpg'); /* Path to your image */
-            background-size: cover; /* Ensure the image covers the entire viewport */
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat; /* Prevent the image from repeating */
-            margin: 0; /* Remove default margin */
-            font-family: 'Franklin Gothic Medium', sans-serif; /* Optional: Set a font */
-            color: #fff; /* Optional: Set text color */
+            background-image: url('pics/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', sans-serif;
+            color: #fff;
         }
 
-        /* Style for the background container */
         .background {
-            height: 100vh; /* Full viewport height */
-            width: 100%; /* Full width */
-            display: flex; /* Use Flexbox for layout */
-            flex-direction: column; /* Stack items vertically */
-            justify-content: center; /* Center items vertically */
-            align-items: center; /* Center items horizontally */
-            text-align: center; /* Center text horizontally within the container */
-            position: relative; /* Ensure relative positioning for child elements */
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo, .small-logo, .fb-logo, .contact-logo, .loc-logo, .email-logo {
+            position: absolute;
+            height: auto;
+            z-index: 1000;
         }
 
         .logo {
-            position: absolute; /* Fixed position relative to the viewport */
-            bottom: 2%; /* Distance from the bottom of the viewport */
-            right: 5%; /* Distance from the right edge of the viewport */
-            width: 10vw; /* Width of the logo relative to viewport width */
-            height: auto; /* Maintain aspect ratio */
-            z-index: 1000; /* Ensure the logo is on top of other content */
+            bottom: 2%;
+            right: 5%;
+            width: 10vw;
         }
 
         .small-logo {
-            position: absolute; /* Fixed position relative to the viewport */
-            top: 11%; /* Distance from the top of the viewport */
-            left: 44.5%; /* Distance from the left edge of the viewport */
-            width: 15vw; /* Width of the logo relative to viewport width */
-            height: auto; /* Maintain aspect ratio */
-            z-index: 1000; /* Ensure the logo is on top of other content */
-            box-shadow: 5px 5px 10px rgb(167, 157, 157); /* Add shadow effect */
-            justify-content: center;
+            top: 11%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15vw;
             border-radius: 50%;
+            box-shadow: 5px 5px 10px rgb(167, 157, 157);
         }
 
         .fb-logo {
-            position: absolute; /* Fixed position relative to the viewport */
-            bottom: 29%; /* Distance from the bottom of the viewport */
-            left: 6%; /* Distance from the left edge of the viewport */
-            width: 4vw; /* Width of the logo relative to viewport width */
-            height: auto; /* Maintain aspect ratio */
-            z-index: 1000; /* Ensure the logo is on top of other content */
+            bottom: 29%;
+            left: 6%;
+            width: 4vw;
         }
         .fb-logo:hover {
-            transform: scale(1.1); /* Scale effect on hover */
+            transform: scale(1.1);
         }
 
-        .contact-logo {
-            position: absolute; /* Fixed position relative to the viewport */
-            bottom: 6.5%; /* Distance from the bottom of the viewport */
-            left: 6.5%; /* Distance from the left edge of the viewport */
-            width: 3vw; /* Width of the logo relative to viewport width */
-            height: auto; /* Maintain aspect ratio */
-            z-index: 1000; /* Ensure the logo is on top of other content */
+        .contact-logo, .loc-logo, .email-logo {
+            left: 6.5%;
+            width: 3vw;
         }
 
-        .loc-logo {
-            position: absolute; /* Fixed position relative to the viewport */
-            bottom: 22%; /* Distance from the bottom of the viewport */
-            left: 6.5%; /* Distance from the left edge of the viewport */
-            width: 3vw; /* Width of the logo relative to viewport width */
-            height: auto; /* Maintain aspect ratio */
-            z-index: 1000; /* Ensure the logo is on top of other content */
-        }
+        .contact-logo { bottom: 6.5%; }
+        .loc-logo { bottom: 22%; }
+        .email-logo { bottom: 14%; }
 
-        .email-logo {
-            position: absolute; /* Fixed position relative to the viewport */
-            bottom: 14%; /* Distance from the bottom of the viewport */
-            left: 6.5%; /* Distance from the left edge of the viewport */
-            width: 3vw; /* Width of the logo relative to viewport width */
-            height: auto; /* Maintain aspect ratio */
-            z-index: 1000; /* Ensure the logo is on top of other content */
-        }
-
-        .fb-text {
-            position: absolute; /* Fixed position relative to the viewport */
-            bottom: 32%; /* Adjust as needed */
-            left: 10.5%; /* Adjust as needed */
-            color: #fff; /* Text color */
-            font-size: 1.0vw; /* Responsive font size */
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .loc-text {
-            position: absolute; /* Fixed position relative to the viewport */
-            bottom: 23.5%; /* Adjust as needed */
-            left: 10%; /* Adjust as needed */
-            color: #fff; /* Text color */
-            font-size: 1.0vw; /* Responsive font size */
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .contact-text {
-            position: absolute; /* Fixed position relative to the viewport */
-            bottom: 8%; /* Adjust as needed */
-            left: 9.5%; /* Adjust as needed */
-            color: #fff; /* Text color */
-            font-size: 1.0vw; /* Responsive font size */
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .email-text {
-            position: absolute; /* Fixed position relative to the viewport */
-            bottom: 16%; /* Adjust as needed */
-            left: 10%; /* Adjust as needed */
-            color: #fff; /* Text color */
-            font-size: 1.0vw; /* Responsive font size */
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .position-text {
+        .fb-text, .loc-text, .contact-text, .email-text, .position-text, .h1-text, .h5-text, .h6-text {
+            position: absolute;
             color: #fff;
-            font-size: 1.5vw;
-            position: absolute; 
-            top: 50%;
-            left: 46.5%;
-            font-style: italic;
             font-family: 'Times New Roman', Times, serif;
         }
+
+        .fb-text, .loc-text, .contact-text, .email-text {
+            font-size: 1.0vw;
+        }
+
+        .fb-text { bottom: 32%; left: 10.5%; }
+        .loc-text { bottom: 23.5%; left: 10%; }
+        .contact-text { bottom: 8%; left: 9.5%; }
+        .email-text { bottom: 16%; left: 10%; }
 
         .h1-text {
-            position: absolute; 
-            transform: translateX(-23%);
+            transform: translateX(-50%);
             top: 45%;
-            left: 48%;
-            color: #fff;
+            left: 50%;
             font-size: 2.5vw;
             text-shadow: 
                 2px 2px 0 #000, 
@@ -144,61 +92,112 @@
                 2px -2px 0 #000, 
                 -2px 2px 0 #000;
         }
+
+        .position-text {
+            top: 50%;
+            left: 50%;
+            font-size: 1.5vw;
+            font-style: italic;
+            transform: translateX(-50%);
+        }
+
         .h5-text {
             color: #f5e507;
-            font-size: 2vw;
-            position: absolute; 
             top: 70%;
             left: 55%;
             right: 18%;
+            font-size: 2vw;
             font-style: italic;
-            font-family: 'Times New Roman', Times, serif;
             text-align: justify;
         }
+
         .h6-text {
-            color: #fff;
-            font-size: 1vw;
-            position: absolute; 
             bottom: 3%;
             left: 35%;
+            font-size: 1vw;
             font-style: italic;
-            font-family: 'Times New Roman', Times, serif;
         }
-         @media (max-width: 600px) {
-            .container {
-                width: 100%;
-                padding: 10px;
+
+        @media (max-width: 768px) {
+            .logo {
+                width: 15vw;
             }
-         }
+
+            .small-logo {
+                width: 20vw;
+            }
+
+            .fb-logo, .contact-logo, .loc-logo, .email-logo {
+                width: 5vw;
+            }
+
+            .fb-text, .loc-text, .contact-text, .email-text, .position-text {
+                font-size: 2.5vw;
+            }
+
+            .h1-text {
+                font-size: 4vw;
+            }
+
+            .h5-text {
+                font-size: 3vw;
+                left: 5%;
+                right: 5%;
+            }
+
+            .h6-text {
+                font-size: 2vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 20vw;
+            }
+
+            .small-logo {
+                width: 25vw;
+            }
+
+            .fb-logo, .contact-logo, .loc-logo, .email-logo {
+                width: 6vw;
+            }
+
+            .fb-text, .loc-text, .contact-text, .email-text, .position-text {
+                font-size: 3.5vw;
+            }
+
+            .h1-text {
+                font-size: 5vw;
+            }
+
+            .h5-text {
+                font-size: 4vw;
+            }
+
+            .h6-text {
+                font-size: 3vw;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="background">
-    </div>
-
-    <!-- 1x1 pixel image -->
+    <div class="background"></div>
     <img src="pics/logo.png" alt="1x1 Logo" class="small-logo">
-    <!-- Main logo -->
     <img src="pics/logo.png" alt="Company Logo" class="logo">
-    <!-- Social media logos -->
     <a href="https://www.facebook.com/OneSourceGeneralSolutionsInc" target="_blank">
-    <img src="pics/fb.png" alt="Facebook Logo" class="fb-logo">
+        <img src="pics/fb.png" alt="Facebook Logo" class="fb-logo">
     </a>
-
     <img src="pics/contact.png" alt="Contact Logo" class="contact-logo">
     <img src="pics/loc.png" alt="Location Logo" class="loc-logo">
-    <!-- Social media text -->
     <div class="fb-text">ONE Source General Solutions Inc.</div>
     <div class="contact-text">(0918) 967-8486 | (0919) 061-3305 </div>
     <div class="h1-text">PRINCIPE, Marlon</div>
     <div class="loc-text">Blk 01 Lot 25 Grandriverstone Brgy. Dita, Sta. Rosa City Laguna, Philippines</div>
-    
     <a href="mailto:hrd.recruitment@onesourcemsgs.com">
         <img src="pics/mail.png" alt="Email Logo" class="email-logo">
     </a>
     <div class="email-text"> hrd.recruitment@onesourcemsgs.com </div>
-       
-
     <div class="h5-text">"Innovating Service Quality ..."</div>
     <div class="h6-text">Copyright © 2024 One Source General Solutions | All Rights Reserved</div>
     <div class="position-text">Admin & IT Supervisor</div>
